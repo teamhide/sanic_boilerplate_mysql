@@ -7,7 +7,7 @@ class UserRepository:
     __metaclass__ = abc.ABCMeta
 
     @abc.abstractmethod
-    def save_user(self, query: dict) -> Optional[NoReturn]:
+    def save_user(self, entity: UserEntity) -> Optional[NoReturn]:
         pass
 
     @abc.abstractmethod
@@ -24,7 +24,7 @@ class UserRepository:
 
 
 class UserMySQLRepository(UserRepository):
-    def save_user(self, query: dict) -> Optional[NoReturn]:
+    def save_user(self, entity: UserEntity) -> Optional[NoReturn]:
         pass
 
     def get_user(self, user_id: int) -> Union[UserEntity, NoReturn]:
