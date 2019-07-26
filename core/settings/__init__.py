@@ -8,8 +8,7 @@ class Config:
     debug: bool = os.getenv('DEBUG', True)
     app_host: str = os.getenv('APP_HOST', '0.0.0.0')
     app_port: int = os.getenv('APP_PORT', 8000)
-    db_host: str = os.getenv('DB_HOST', '')
-    db_port: int = os.getenv('DB_PORT', 3306)
+    db_url: str = os.getenv('DB_URL', 'mysql://sanic:sanic@localhost:3306/sanic')
 
 
 @dataclass(frozen=True)

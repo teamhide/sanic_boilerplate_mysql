@@ -8,7 +8,7 @@ def init_listeners(app: Sanic, config):
     @app.listener('before_server_start')
     async def init_db(app, loop):
         await Tortoise.init(
-            db_url='mysql://sanic:sanic@localhost:3306/sanic',
+            db_url=config.db_url,
             modules={'models': ['apps.users.models.user_model']}
         )
         await Tortoise.generate_schemas()
@@ -32,6 +32,7 @@ def init_exception_handlers(app: Sanic, config):
 
 
 def create_app(config):
+    print(config)
     app = Sanic(__name__)
 
     init_listeners(app=app, config=config)
