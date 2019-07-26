@@ -1,4 +1,5 @@
 from sanic import Sanic
+from tortoise import Tortoise
 from apps.users.views import bp as user_bp
 from apps.home import bp as home_bp
 
@@ -6,10 +7,14 @@ from apps.home import bp as home_bp
 def init_listeners(app: Sanic, config):
     @app.listener('before_server_start')
     async def init_db(app, loop):
-        pass
+        await Tortoise.init(
+            db_url='mysql://sanic:sanic@localhost:3306/sanic',
+            modules={'models': ['apps.users.models.user_model']}
+        )
+        await Tortoise.generate_schemas()
 
     @app.listener('after_server_stop')
-    async def cleanup_db(app, loop):
+    async def close_db(app, loop):
         pass
 
 
