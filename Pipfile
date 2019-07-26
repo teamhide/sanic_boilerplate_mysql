@@ -9,6 +9,7 @@ verify_ssl = true
 sanic = "*"
 tortoise-orm = "*"
 aiomysql = "*"
+marshmallow = "*"
 
 [requires]
 python_version = "3.7"
