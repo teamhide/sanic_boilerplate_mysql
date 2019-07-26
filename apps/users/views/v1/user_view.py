@@ -9,3 +9,6 @@ class UserList(HTTPMethodView):
 
     async def get(self, request: Request) -> Union[json, NoReturn]:
         return json(body={'status': True})
+
+    async def post(self, request: Request) -> Union[json, NoReturn]:
+        return json(body={'status': True})
