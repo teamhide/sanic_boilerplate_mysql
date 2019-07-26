@@ -32,7 +32,6 @@ def init_exception_handlers(app: Sanic, config):
 
 
 def create_app(config):
-    print(config)
     app = Sanic(__name__)
 
     init_listeners(app=app, config=config)
