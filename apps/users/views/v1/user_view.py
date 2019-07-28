@@ -22,3 +22,13 @@ class UserList(HTTPMethodView):
         user = await CreateUserInteractor().execute(dto=dto)
         schema = UserResponseSchema().dump(user).data
         return json(body={'data': schema})
+
+
+class User(HTTPMethodView):
+    decorators = []
+
+    async def get(self, request: Request) -> Union[json, NoReturn]:
+        return json(body={'status': True})
+
+    async def post(self, request: Request) -> Union[json, NoReturn]:
+        return json(body={'status': True})
