@@ -34,3 +34,10 @@ class SocialLoginFailException(SanicException):
     def __init__(self):
         message = 'Social login fail'
         super().__init__(message=message)
+
+
+@add_status_code(401)
+class NotUniqueException(SanicException):
+    def __init__(self):
+        message = 'Not unique'
+        super().__init__(message=message)
