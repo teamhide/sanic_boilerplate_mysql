@@ -11,6 +11,7 @@ tortoise-orm = "*"
 aiomysql = "*"
 marshmallow = "*"
 bcrypt = "*"
+pytest-sanic = "*"
 
 [requires]
 python_version = "3.7"
