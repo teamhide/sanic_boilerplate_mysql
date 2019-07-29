@@ -1,7 +1,6 @@
 ## Sanic Boilerplate based on Clean Architecture
 
 - Sanic(Async Webframework)
-
 - Marshmallow(Serialization)
 - Tortoise(Database ORM)
 - MySQL
