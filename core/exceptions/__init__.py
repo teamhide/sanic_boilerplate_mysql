@@ -41,3 +41,10 @@ class NotUniqueException(SanicException):
     def __init__(self):
         message = 'Not unique'
         super().__init__(message=message)
+
+
+@add_status_code(401)
+class UnknownException(SanicException):
+    def __init__(self):
+        message = 'Unknown'
+        super().__init__(message=message)
