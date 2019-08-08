@@ -9,9 +9,9 @@ def init_listeners(app: Sanic, config):
     async def init_db(app, loop):
         await Tortoise.init(
             db_url=config.db_url,
-            modules={'models': ['apps.users.models.user_model']}
+            modules={'models': ['apps.users.models.user_model']},
         )
-        await Tortoise.generate_schemas()
+        await Tortoise.generate_schemas(safe=True)
 
     @app.listener('after_server_stop')
     async def close_db(app, loop):

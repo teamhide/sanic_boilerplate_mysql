@@ -22,7 +22,7 @@ class CreateUserInteractor(UserInteractor):
         self.facebook_url = ''
         self.headers = {}
 
-    def execute(self, dto: CreateUserDto):
+    async def execute(self, dto: CreateUserDto):
         """
         유저 회원가입 함수
         :param dto: CreateUserDto
