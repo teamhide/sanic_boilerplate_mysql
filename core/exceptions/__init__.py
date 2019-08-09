@@ -48,3 +48,10 @@ class UnknownException(SanicException):
     def __init__(self):
         message = 'Unknown'
         super().__init__(message=message)
+
+
+@add_status_code(401)
+class DuplicateException(SanicException):
+    def __init__(self):
+        message = 'Duplicate error'
+        super().__init__(message=message)
